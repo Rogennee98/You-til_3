@@ -38,6 +38,9 @@ public class CalculatorActivity extends AppCompatActivity {
     private char ACTION;
     private final char EQU= 0;
 
+    //PRACTICE CLEAR
+    //private Button clear2;
+
 
 
     @Override
@@ -178,20 +181,57 @@ public class CalculatorActivity extends AppCompatActivity {
                 }
             });
 
+
+
+
+
+        ///////////////////////////////////////////////////////////////////////// I    FIGURED IT OUUUTTT !!!!!!!!!!!!
+        /*
+        clear2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               // compute();
+                val1 = Double.NaN;                       //I added this part, take off when u want original
+                val2 = Double.NaN;                       //I added this part, take off when u want original
+
+                //I added this part, take off when u want original
+                textViewAnswer.setText(null);
+                textViewInput.setText(null);
+            }
+        });
+
+         */
+        ///////////////////////////////////////////////////////////////////////
+
+
+
             buttonClear.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    compute();
 
-                    if(textViewInput.getText().length() > 0)
+                    //WTF U DON'T NEED THIS
+                   // compute();
+
+
+                    if(textViewInput.getText().length() > 0 )
         {
             CharSequence name = textViewInput.getText().toString();
             textViewInput.setText(name.subSequence(0, name.length()-1 ));
 
 
+
+         //   val1 = Double.NaN;                       //I added this part, take off when u want original
+         //   val2 = Double.NaN;                       //I added this part, take off when u want original
+         //   textViewInput.setText(null);             //I added this part, take off when u want original
+         //   textViewAnswer.setText(null);            //I added this part, take off when u want original
+
+
+
         }
         else
         {
+
+
             val1 = Double.NaN;
             val2 = Double.NaN;
             textViewInput.setText(null);
@@ -199,7 +239,11 @@ public class CalculatorActivity extends AppCompatActivity {
         }
 
 
+
+
     }
+
+
 });
 
 
@@ -225,9 +269,11 @@ public class CalculatorActivity extends AppCompatActivity {
         buttonMultiply = (Button) findViewById(R.id.button_multiply);
         buttonClear = (Button) findViewById(R.id.button_clear);
         buttonEqual = (Button) findViewById(R.id.button_equal);
-        textViewAnswer = (TextView) findViewById(R.id.textView_answer);
-        textViewInput = (TextView) findViewById(R.id.textView_input);
+        textViewAnswer = (TextView) findViewById(R.id.textView_answer);    //////////////////////////////////
+        textViewInput = (TextView) findViewById(R.id.textView_input);      //////////////////////////////////
 
+        // PRACTICE CLEAR
+        //clear2=(Button)findViewById(R.id.clear2);
     }
 
     private void compute()
